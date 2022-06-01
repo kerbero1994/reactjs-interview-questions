@@ -26,16 +26,16 @@ You can download the PDF and Epub version of this repository from the latest run
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | **Core React**                                                                                                                                                                                                                   |
 | 1   | [Que es React?](#Que-es-React)                                                                                                                                                                                                   |
-| 2   | [What are the major features of React?](#what-are-the-major-features-of-react)                                                                                                                                                   |
-| 3   | [What is JSX?](#what-is-jsx)                                                                                                                                                                                                     |
-| 4   | [What is the difference between Element and Component?](#what-is-the-difference-between-element-and-component)                                                                                                                   |
-| 5   | [How to create components in React?](#how-to-create-components-in-react)                                                                                                                                                         |
-| 6   | [When to use a Class Component over a Function Component?](#when-to-use-a-class-component-over-a-function-component)                                                                                                             |
-| 7   | [What are Pure Components?](#what-are-pure-components)                                                                                                                                                                           |
-| 8   | [What is state in React?](#what-is-state-in-react)                                                                                                                                                                               |
-| 9   | [What are props in React?](#what-are-props-in-react)                                                                                                                                                                             |
-| 10  | [What is the difference between state and props?](#what-is-the-difference-between-state-and-props)                                                                                                                               |
-| 11  | [Why should we not update the state directly?](#why-should-we-not-update-the-state-directly)                                                                                                                                     |
+| 2   | [Cuáles son las principales características de React?](#Cuáles-son-las-principales-características-de-React)                                                                                                                     |
+| 3   | [Que es JSX?](#Que-es-jsx)                                                                                                                                                                                                       |
+| 4   | [Cual es la diferencia entre un componente y un elemento?](#Cual-es-la-diferencia-entre-un-componente-y-un-elemento)                                                                                                             |
+| 5   | [Como crear Componentes en React?](#Como-crear-Componentes-en-React)                                                                                                                                                             |
+| 6   | [Cuando elegir un componente de clase (Class Component) sobre un componente Funcional (Functional Component)?](#Cuando-elegir-un-componente-de-clase-sobre-un-componente-funcional)                                              |
+| 7   | [Que es un componente puro?](#Que-es-un-componente-puro)                                                                                                                                                                         |
+| 8   | [Que es el estado (state) en React](#Que-es-el-estado-en-React)                                                                                                                                                                  |
+| 9   | [Que son los props React?](#Que-son-los-props-en-React)                                                                                                                                                                          |
+| 10  | [Cual es la diferencia entre state y props?](#Cual-es-la-diferencia-entre-state-y-props)                                                                                                                                         |
+| 11  | [Por que no debemos actualizar el state directamente?](#Por-que-no-debemos-actulizar-el-state-directamente)                                                                                                                      |
 | 12  | [What is the purpose of callback function as an argument of setState()?](#what-is-the-purpose-of-callback-function-as-an-argument-of-setstate)                                                                                   |
 | 13  | [What is the difference between HTML and React event handling?](#what-is-the-difference-between-html-and-react-event-handling)                                                                                                   |
 | 14  | [How to bind methods or event handlers in JSX callbacks?](#how-to-bind-methods-or-event-handlers-in-jsx-callbacks)                                                                                                               |
@@ -453,7 +453,7 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-5.  ### Como crear funciones Componentes en React?
+5.  ### Como crear Componentes en React?
 
     Existen 2 formas posibles de crear componentes.
 
@@ -485,17 +485,17 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-7.  ### What are Pure Components?
+7.  ### Que es un componente puro?
 
-    _`React.PureComponent`_ is exactly the same as _`React.Component`_ except that it handles the `shouldComponentUpdate()` method for you. When props or state changes, _PureComponent_ will do a shallow comparison on both props and state. _Component_ on the other hand won't compare current props and state to next out of the box. Thus, the component will re-render by default whenever `shouldComponentUpdate` is called.
+`React.PureComponent`_ es exactamente lo mismo que _`React.Component`_ excepto que maneja el método `shouldComponentUpdate()` por usted. Cuando las propiedades o el estado cambien, \_PureComponent_ hará una comparación superficial tanto de las propiedades como del estado. _Component_, por otro lado, no comparará los props y el estado actuales con el siguiente listo para usar. Por lo tanto, el componente se volverá a renderizar de forma predeterminada cada vez que se llame a `shouldComponentUpdate`.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-8.  ### What is state in React?
+8.  ### Que es el estado (state) en React?
 
-    _State_ of a component is an object that holds some information that may change over the lifetime of the component. We should always try to make our state as simple as possible and minimize the number of stateful components.
+    El _Estado_ de un componente es un objeto que contiene cierta información que puede cambiar durante la vida útil del componente. Siempre debemos tratar de hacer que nuestro estado sea lo más simple posible y minimizar la cantidad de componentes con estado.
 
-    Let's create a user component with message state,
+    Vamos a crear un componente de usuario con estado de mensaje,
 
     ```jsx harmony
     class User extends React.Component {
@@ -519,21 +519,21 @@ You can download the PDF and Epub version of this repository from the latest run
 
     ![state](images/state.jpg)
 
-    State is similar to props, but it is private and fully controlled by the component ,i.e., it is not accessible to any other component till the owner component decides to pass it.
+    El estado es similar a los _props_, pero es privado y está totalmente controlado por el componente, es decir, no es accesible para ningún otro componente hasta que el componente propietario decida pasarlo.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-9.  ### What are props in React?
+9.  ### Que son los props en React?
 
-    _Props_ are inputs to components. They are single values or objects containing a set of values that are passed to components on creation using a naming convention similar to HTML-tag attributes. They are data passed down from a parent component to a child component.
+    _Props_ son entradas a los componentes. Son valores únicos u objetos que contienen un conjunto de valores que se pasan a los componentes en el momento de la creación utilizando una convención de nomenclatura similar a los atributos de etiquetas HTML. Son datos transmitidos de un componente padre a un componente hijo.
 
-    The primary purpose of props in React is to provide following component functionality:
+    El propósito principal de los props en React es proporcionar la siguiente funcionalidad de componentes:
 
-    1. Pass custom data to your component.
-    2. Trigger state changes.
-    3. Use via `this.props.reactProp` inside component's `render()` method.
+    1. Pasar datos personalizados a su componente.
+    2. Activar cambios de estado.
+    3. Usar a través de `this.props.reactProp` dentro del método `render()` del componente.
 
-    For example, let us create an element with `reactProp` property:
+    Por ejemplo, creemos un elemento con la propiedad `reactProp`:
 
     ```jsx harmony
     <Element reactProp={"1"} />
@@ -547,37 +547,37 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-10. ### What is the difference between state and props?
+10. ### Cual es la diferencia entre state y props?
 
-    Both _props_ and _state_ are plain JavaScript objects. While both of them hold information that influences the output of render, they are different in their functionality with respect to component. Props get passed to the component similar to function parameters whereas state is managed within the component similar to variables declared within a function.
+    Tanto _props_ como _state_ son objetos simples de JavaScript. Si bien ambos contienen información que influye en la salida del renderizado, son diferentes en su funcionalidad con respecto al componente. Los _props_ se pasan al componente de manera similar a los parámetros de la función, mientras que el estado se administra dentro del componente de manera similar a las variables declaradas dentro de una función.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-11. ### Why should we not update the state directly?
+11. ### Por que no debemos actualizar el state directamente?
 
-    If you try to update the state directly then it won't re-render the component.
+    Si intenta actualizar el estado directamente, este no hará re-render del componente.
 
     ```javascript
     //Wrong
     this.state.message = "Hello world";
     ```
 
-    Instead use `setState()` method. It schedules an update to a component's state object. When state changes, the component responds by re-rendering.
+    En su lugar, utilice el método `setState()`. Programa una actualización del objeto de estado de un componente. Cuando cambia el estado, el componente responde volviendo a renderizar.
 
     ```javascript
     //Correct
     this.setState({ message: "Hello World" });
     ```
 
-    **Note:** You can directly assign to the state object either in _constructor_ or using latest javascript's class field declaration syntax.
+    **Note:** Puede asignar directamente al objeto de estado ya sea en _constructor_ o usando la última sintaxis de declaración de campo de clase de javascript.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-12. ### What is the purpose of callback function as an argument of `setState()`?
+12. ### ¿Cuál es el propósito de la función callback como argumento de `setState()`?
 
-    The callback function is invoked when setState finished and the component gets rendered. Since `setState()` is **asynchronous** the callback function is used for any post action.
+    La función callback se invoca cuando setState finaliza y el componente se procesa. Dado que `setState()` es **asincrónico**, la función callback se usa para cualquier acción posterior.
 
-    **Note:** It is recommended to use lifecycle method rather than this callback function.
+    **Note:** Se recomienda utilizar el método del ciclo de vida en lugar de esta función callback.
 
     ```javascript
     setState({ name: "John" }, () =>
@@ -587,23 +587,23 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-13. ### What is the difference between HTML and React event handling?
+13. ### Cual es la diferencia entre HTML y React en el manejo de eventos (event handling)?
 
-    Below are some of the main differences between HTML and React event handling,
+    A continuación se muestran algunas de las principales diferencias entre el manejo de eventos HTML y React,
 
-    1. In HTML, the event name usually represents in _lowercase_ as a convention:
+    1.En HTML, el nombre del evento generalmente se representa en _minúsculas_ como convención:
 
-       ```html
-       <button onclick="activateLasers()"></button>
-       ```
+    ```html
+    <button onclick="activateLasers()"></button>
+    ```
 
-       Whereas in React it follows _camelCase_ convention:
+    Mientras que en React sigue la convención _camelCase_:
 
-       ```jsx harmony
-       <button onClick={activateLasers}>
-       ```
+    ```jsx harmony
+    <button onClick={activateLasers}>
+    ```
 
-    2. In HTML, you can return `false` to prevent default behavior:
+    2. En HTML, puede devolver `falso` para evitar el comportamiento predeterminado:
 
        ```html
        <a
@@ -612,7 +612,7 @@ You can download the PDF and Epub version of this repository from the latest run
        />
        ```
 
-       Whereas in React you must call `preventDefault()` explicitly:
+       Mientras que en React debes llamar explícitamente a `preventDefault()`:
 
        ```javascript
        function handleClick(event) {
@@ -621,16 +621,16 @@ You can download the PDF and Epub version of this repository from the latest run
        }
        ```
 
-    3. In HTML, you need to invoke the function by appending `()`
-       Whereas in react you should not append `()` with the function name. (refer "activateLasers" function in the first point for example)
+    3. En HTML, debe invocar la función agregando `()`
+       Mientras que en React no debe agregar `()` con el nombre de la función. (consulte la función "activateLasers" en el primer punto, por ejemplo)
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-14. ### How to bind methods or event handlers in JSX callbacks?
+14. ### Cómo enlazar métodos (bind ) o controladores de eventos (handlers) en JSX callbacks?
 
-    There are 3 possible ways to achieve this:
+    Hay 3 formas posibles de lograr esto:
 
-    1. **Binding in Constructor:** In JavaScript classes, the methods are not bound by default. The same thing applies for React event handlers defined as class methods. Normally we bind them in constructor.
+    1. **Binding en Constructor:** En las clases de JavaScript, los métodos no están vinculados de forma predeterminada. Lo mismo se aplica a los controladores de eventos de React definidos como métodos de clase. Normalmente los enlazamos en constructor.
 
        ```javascript
        class Foo extends Component {
@@ -647,7 +647,7 @@ You can download the PDF and Epub version of this repository from the latest run
        }
        ```
 
-    2. **Public class fields syntax:** If you don't like to use bind approach then _public class fields syntax_ can be used to correctly bind callbacks.
+    2. **Sintaxis de campos de clase pública:** Si no le gusta usar el enfoque de vinculación (bind), entonces se puede usar la _sintaxis de campos de clase pública_ para vincular correctamente los callbacks.
 
        ```jsx harmony
        handleClick = () => {
@@ -659,7 +659,7 @@ You can download the PDF and Epub version of this repository from the latest run
        <button onClick={this.handleClick}>{"Click me"}</button>
        ```
 
-    3. **Arrow functions in callbacks:** You can use _arrow functions_ directly in the callbacks.
+    3. **funciones de flecha en callbacks:** Puede usar _funciones de flecha_ (Arrow functions) directamente en los callbacks.
 
        ```jsx harmony
        handleClick() {
@@ -670,25 +670,25 @@ You can download the PDF and Epub version of this repository from the latest run
        }
        ```
 
-    **Note:** If the callback is passed as prop to child components, those components might do an extra re-rendering. In those cases, it is preferred to go with `.bind()` or _public class fields syntax_ approach considering performance.
+    **Note:** Si el callback se pasa como _prop_ a los componentes hijos, esos componentes pueden volver a renderizarse adicionalmente. En esos casos, se prefiere ir con `.bind()` o _sintaxis de campos de clase pública_ teniendo en cuenta el rendimiento.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-15. ### How to pass a parameter to an event handler or callback?
+15. ### Como pasar parámetros a un controlador de eventos (event handler) o callback?
 
-    You can use an _arrow function_ to wrap around an _event handler_ and pass parameters:
+    Puede usar una _función de flecha_ para envolver un _controlador de eventos_ y pasar parámetros:
 
     ```jsx harmony
     <button onClick={() => this.handleClick(id)} />
     ```
 
-    This is an equivalent to calling `.bind`:
+Esto es equivalente a llamar a `.bind`:
 
     ```jsx harmony
     <button onClick={this.handleClick.bind(this, id)} />
     ```
 
-    Apart from these two approaches, you can also pass arguments to a function which is defined as arrow function
+Además de estos dos enfoques, también puede pasar argumentos a una función que se define como función de flecha
 
     ```jsx harmony
     <button onClick={this.handleClick(id)} />;
@@ -699,15 +699,15 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-16. ### What are synthetic events in React?
+16. ### Que son los eventos sintéticos en React?
 
-    `SyntheticEvent` is a cross-browser wrapper around the browser's native event. Its API is same as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers.
+    `SyntheticEvent` es un contenedor entre navegadores alrededor del evento nativo del navegador. Su API es la misma que el evento nativo del navegador, incluidos `stopPropagation()` y `preventDefault()`, excepto que los eventos funcionan de manera idéntica en todos los navegadores.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-17. ### What are inline conditional expressions?
+17. ### Qué son las expresiones condicionales en línea??
 
-    You can use either _if statements_ or _ternary expressions_ which are available from JS to conditionally render expressions. Apart from these approaches, you can also embed any expressions in JSX by wrapping them in curly braces and then followed by JS logical operator `&&`.
+    Puede usar declaraciones _if_ o _expresiones ternarias_ que están disponibles en JS para representar expresiones condicionalmente. Aparte de estos enfoques, también puede incrustar cualquier expresión en JSX envolviéndolas entre llaves y luego seguidas por el operador lógico JS `&&`.
 
     ```jsx harmony
     <h1>Hello!</h1>;
@@ -722,17 +722,17 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-18. ### What is "key" prop and what is the benefit of using it in arrays of elements?
+18. ### Que es el"key" prop y cual es el beneficio de usarlo en arreglos de elementos?
 
-    A `key` is a special string attribute you **should** include when creating arrays of elements. _Key_ prop helps React identify which items have changed, are added, or are removed.
+    Una `Key` es un atributo de cadena especial que **debe** incluir al crear arreglos de elementos. _Key_ prop ayuda a React a identificar qué elementos han cambiado, se agregaron o se eliminaron.
 
-    Most often we use ID from our data as _key_:
+    La mayoría de las veces usamos ID de nuestros datos como _clave_:
 
     ```jsx harmony
     const todoItems = todos.map((todo) => <li key={todo.id}>{todo.text}</li>);
     ```
 
-    When you don't have stable IDs for rendered items, you may use the item _index_ as a _key_ as a last resort:
+    Cuando no tiene ID estables para los elementos representados, puede usar el elemento _index_ como _clave_ como último recurso:
 
     ```jsx harmony
     const todoItems = todos.map((todo, index) => (
@@ -742,23 +742,23 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **Note:**
 
-    1. Using _indexes_ for _keys_ is **not recommended** if the order of items may change. This can negatively impact performance and may cause issues with component state.
-    2. If you extract list item as separate component then apply _keys_ on list component instead of `li` tag.
-    3. There will be a warning message in the console if the `key` prop is not present on list items.
+    1. \*No se recomienda\*\* usar _índices_ para _Keys_ si el orden de los elementos puede cambiar. Esto puede tener un impacto negativo en el rendimiento y puede causar problemas con el estado del componente.
+    2. Si extrae el elemento de la lista como un componente separado, aplique _keys_ en el componente de la lista en lugar de la etiqueta `li`.
+    3. Habrá un mensaje de advertencia en la consola si la propiedad "clave" no está presente en los elementos de la lista.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-19. ### What is the use of refs?
+19. ### Cual es el uso de refs?
 
-    The _ref_ is used to return a reference to the element. They _should be avoided_ in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.
+    El _ref_ se usa para devolver una referencia al elemento. _Deberían evitarse_ en la mayoría de los casos, sin embargo, pueden ser útiles cuando necesite un acceso directo al elemento DOM o una instancia de un componente.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-20. ### How to create refs?
+20. ### Como crear refs?
 
-    There are two approaches
+    Existen 2 opciones
 
-    1. This is a recently added approach. _Refs_ are created using `React.createRef()` method and attached to React elements via the `ref` attribute. In order to use _refs_ throughout the component, just assign the _ref_ to the instance property within constructor.
+    1. Este es un enfoque agregado recientemente. Las _Refs_ se crean utilizando el método `React.createRef()` y se adjuntan a los elementos de React a través del atributo `ref`. Para usar _refs_ en todo el componente, simplemente asigne _ref_ a la propiedad de instancia dentro del constructor.
 
        ```jsx harmony
        class MyComponent extends React.Component {
@@ -772,7 +772,7 @@ You can download the PDF and Epub version of this repository from the latest run
        }
        ```
 
-    2. You can also use ref callbacks approach regardless of React version. For example, the search bar component's input element is accessed as follows,
+    2. También puede usar el enfoque de callback de referencia independientemente de la versión de React. Por ejemplo, se accede al elemento de entrada del componente de la barra de búsqueda de la siguiente manera,
        ```jsx harmony
        class SearchBar extends Component {
          constructor(props) {
@@ -798,14 +798,14 @@ You can download the PDF and Epub version of this repository from the latest run
        }
        ```
 
-    You can also use _refs_ in function components using **closures**.
-    **Note**: You can also use inline ref callbacks even though it is not a recommended approach.
+    También puede usar _refs_ en componentes de función usando **closures**.
+    **Nota**: También puede usar callbacks de referencia en línea, aunque no es un enfoque recomendado.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-21. ### What are forward refs?
+21. ### Que son los forward refs?
 
-    _Ref forwarding_ is a feature that lets some components take a _ref_ they receive, and pass it further down to a child.
+    _Ref forwarding_ es una función que permite que algunos componentes tomen una _ref_ que reciben y la pasen a un hijo.
 
     ```jsx harmony
     const ButtonElement = React.forwardRef((props, ref) => (
@@ -821,11 +821,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-22. ### Which is preferred option with in callback refs and findDOMNode()?
+22. ### Cuál es la opción preferida con en callback refs y findDOMNode()?
 
-    It is preferred to use _callback refs_ over `findDOMNode()` API. Because `findDOMNode()` prevents certain improvements in React in the future.
+    Se prefiere usar _callback refs_ sobre la API `findDOMNode()`. Porque `findDOMNode()` evita ciertas mejoras en React en el futuro.
 
-    The **legacy** approach of using `findDOMNode`:
+    El enfoque **heredado** de usar `findDOMNode`:
 
     ```javascript
     class MyComponent extends Component {
@@ -839,7 +839,7 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    The recommended approach is:
+    El enfoque recomendado es:
 
     ```javascript
     class MyComponent extends Component {
@@ -859,14 +859,14 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-23. ### Why are String Refs legacy?
+23. ### Por que String son Refs legados?
 
-    If you worked with React before, you might be familiar with an older API where the `ref` attribute is a string, like `ref={'textInput'}`, and the DOM node is accessed as `this.refs.textInput`. We advise against it because _string refs have below issues_, and are considered legacy. String refs were **removed in React v16**.
+    Si trabajó con React antes, es posible que esté familiarizado con una API más antigua donde el atributo `ref` es una cadena, como `ref={'textInput'}`, y se accede al nodo DOM como `this.refs.textInput` . Lo desaconsejamos porque _las referencias de cadena tienen problemas a continuación_ y se consideran heredadas. Las referencias de cadena se **eliminaron en React v16**.
 
-    1. They _force React to keep track of currently executing component_. This is problematic because it makes react module stateful, and thus causes weird errors when react module is duplicated in the bundle.
-    2. They are _not composable_ — if a library puts a ref on the passed child, the user can't put another ref on it. Callback refs are perfectly composable.
-    3. They _don't work with static analysis_ like Flow. Flow can't guess the magic that framework does to make the string ref appear on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
-    4. It doesn't work as most people would expect with the "render callback" pattern (e.g. <DataGrid renderRow={this.renderRow} />)
+    1. Ellos _obligan a React a realizar un seguimiento del componente que se está ejecutando actualmente_. Esto es problemático porque hace que el módulo de React tenga estado y, por lo tanto, causa errores extraños cuando el módulo de React se duplica en el paquete.
+    2. Son _no componibles_: si una biblioteca pone una referencia en el elemento secundario pasado, el usuario no puede poner otra referencia en él. Las referencias de devolución de llamada se pueden componer perfectamente.
+    3. No funcionan con análisis estáticos como Flow. Flow no puede adivinar la magia que hace Framework para hacer que la cadena ref aparezca en `this.refs`, así como su tipo (que podría ser diferente). Las referencias de devolución de llamada son más amigables con el análisis estático.
+    4. No funciona como la mayoría de la gente esperaría con el patrón de "render callback" (por ejemplo, <DataGrid renderRow={this.renderRow} />)
 
        ```jsx harmony
        class MyComponent extends Component {
@@ -888,63 +888,63 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-24. ### What is Virtual DOM?
+24. ### Que es el Dom virtual?
 
-    The _Virtual DOM_ (VDOM) is an in-memory representation of _Real DOM_. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called _reconciliation_.
+    _DOM virtual_ (VDOM) es una representación en memoria de _DOM real_. La representación de una interfaz de usuario se mantiene en la memoria y se sincroniza con el DOM "real". Es un paso que ocurre entre la llamada a la función de representación y la visualización de los elementos en la pantalla. Todo este proceso se llama _reconciliación_.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-25. ### How Virtual DOM works?
+25. ### Como funciona el DOM virtual?
 
-    The _Virtual DOM_ works in three simple steps.
+    El _DOM virtual_ trabaja en 3 pasos.
 
-    1. Whenever any underlying data changes, the entire UI is re-rendered in Virtual DOM representation.
+    1. Cada vez que cambia cualquier dato subyacente, la interfaz de usuario completa se vuelve a representar en la representación del DOM virtual.
 
        ![vdom](images/vdom1.png)
 
-    2. Then the difference between the previous DOM representation and the new one is calculated.
+    2. Luego se calcula la diferencia entre la representación DOM anterior y la nueva.
 
        ![vdom2](images/vdom2.png)
 
-    3. Once the calculations are done, the real DOM will be updated with only the things that have actually changed.
+    3. Una vez que se realizan los cálculos, el DOM real se actualizará con solo las cosas que realmente han cambiado.
 
        ![vdom3](images/vdom3.png)
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-26. ### What is the difference between Shadow DOM and Virtual DOM?
+26. ### Cual es la diferencia entre el Shadow DOM y el Virtual DOM?
 
-    The _Shadow DOM_ is a browser technology designed primarily for scoping variables and CSS in _web components_. The _Virtual DOM_ is a concept implemented by libraries in JavaScript on top of browser APIs.
-
-    **[⬆ Regresar arriba](#table-of-contents)**
-
-27. ### What is React Fiber?
-
-    Fiber is the new _reconciliation_ engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives.
+_Shadow DOM_ es una tecnología de navegador diseñada principalmente para evaluar variables y CSS en _componentes web_. El _DOM virtual_ es un concepto implementado por bibliotecas en JavaScript sobre las API del navegador.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-28. ### What is the main goal of React Fiber?
+27. ### Que es React Fiber?
 
-    The goal of _React Fiber_ is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is **incremental rendering**: the ability to split rendering work into chunks and spread it out over multiple frames.
-
-    _from documentation_
-
-    Its main goals are:
-
-    1. Ability to split interruptible work in chunks.
-    2. Ability to prioritize, rebase and reuse work in progress.
-    3. Ability to yield back and forth between parents and children to support layout in React.
-    4. Ability to return multiple elements from render().
-    5. Better support for error boundaries.
+    Fiber es el nuevo motor de _reconciliación_ o reimplementación del algoritmo central en React v16. El objetivo de React Fiber es aumentar su idoneidad para áreas como animación, diseño, gestos, capacidad para pausar, cancelar o reutilizar el trabajo y asignar prioridad a diferentes tipos de actualizaciones; y nuevas primitivas de concurrencia.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-29. ### What are controlled components?
+28. ### Cual es la principal meta React Fiber?
 
-    A component that controls the input elements within the forms on subsequent user input is called **Controlled Component**, i.e, every state mutation will have an associated handler function.
+    El objetivo de _React Fiber_ es aumentar su idoneidad para áreas como animación, diseño y gestos. Su característica principal es **renderizado incremental**: la capacidad de dividir el trabajo de renderizado en partes y distribuirlo en varios fotogramas.
 
-    For example, to write all the names in uppercase letters, we use handleChange as below,
+    _De la documentación_
+
+    Sus objetivos principales son:
+
+    1. Capacidad para dividir el trabajo interrumpible en fragmentos.
+    2. Capacidad para priorizar, reorganizar y reutilizar el trabajo en curso.
+    3. Capacidad de ir y venir entre padres e hijos para admitir el diseño en React.
+    4. Capacidad para devolver múltiples elementos de render().
+    5. Mejor soporte para error boundaries.
+
+    **[⬆ Regresar arriba](#table-of-contents)**
+
+29. ### Que son los componentes controlados?
+
+Un componente que controla los elementos de entrada dentro de los formularios en la entrada posterior del usuario se llama **Componente controlado**, es decir, cada mutación de estado tendrá una función de controlador asociada.
+
+    Por ejemplo, para escribir todos los nombres en letras mayúsculas, usamos handleChange como se muestra a continuación,
 
     ```javascript
     handleChange(event) {
@@ -954,11 +954,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-30. ### What are uncontrolled components?
+30. ### Que son los componentes Sin control ?
 
-    The **Uncontrolled Components** are the ones that store their own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+    Los **Componentes no controlados** son los que almacenan su propio estado internamente, y usted consulta el DOM usando una referencia para encontrar su valor actual cuando lo necesita. Esto es un poco más como HTML tradicional
 
-    In the below UserProfile component, the `name` input is accessed using ref.
+    En el siguiente componente UserProfile, se accede a la entrada `name` usando ref.
 
     ```jsx harmony
     class UserProfile extends React.Component {
@@ -987,95 +987,94 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    In most cases, it's recommend to use controlled components to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+    En la mayoría de los casos, se recomienda utilizar componentes controlados para implementar formularios. En un componente controlado, los datos del formulario son manejados por un componente React. La alternativa son los componentes no controlados, donde los datos del formulario son manejados por el propio DOM.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-31. ### What is the difference between createElement and cloneElement?
+31. ### Cual es la diferencia entre createElement y cloneElement?
 
-    JSX elements will be transpiled to `React.createElement()` functions to create React elements which are going to be used for the object representation of UI. Whereas `cloneElement` is used to clone an element and pass it new props.
-
-    **[⬆ Regresar arriba](#table-of-contents)**
-
-32. ### What is Lifting State Up in React?
-
-    When several components need to share the same changing data then it is recommended to _lift the shared state up_ to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
+    Los elementos JSX se transpilarán a las funciones `React.createElement()` para crear elementos React que se utilizarán para la representación de objetos de la interfaz de usuario. Mientras que `cloneElement` se usa para clonar un elemento y pasarle nuevos props.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-33. ### What are the different phases of component lifecycle?
+32. ### Qué es el estado de elevación en React?
 
-    The component lifecycle has three distinct lifecycle phases:
+    Cuando varios componentes necesitan compartir los mismos datos cambiantes, se recomienda _elevar el estado compartido_ a su ancestro común más cercano. Eso significa que si dos componentes secundarios comparten los mismos datos de su principal, entonces mueva el estado al principal en lugar de mantener el estado local en ambos componentes secundarios.
 
-    1. **Mounting:** The component is ready to mount in the browser DOM. This phase covers initialization from `constructor()`, `getDerivedStateFromProps()`, `render()`, and `componentDidMount()` lifecycle methods.
+    **[⬆ Regresar arriba](#table-of-contents)**
 
-    2. **Updating:** In this phase, the component gets updated in two ways, sending the new props and updating the state either from `setState()` or `forceUpdate()`. This phase covers `getDerivedStateFromProps()`, `shouldComponentUpdate()`, `render()`, `getSnapshotBeforeUpdate()` and `componentDidUpdate()` lifecycle methods.
+33. ### Cuáles son las diferentes fases del ciclo de vida de los componentes??
 
-    3. **Unmounting:** In this last phase, the component is not needed and gets unmounted from the browser DOM. This phase includes `componentWillUnmount()` lifecycle method.
+    El ciclo de vida del componente tiene tres fases de ciclo de vida distintas:
 
-    It's worth mentioning that React internally has a concept of phases when applying changes to the DOM. They are separated as follows
+    1. **Mounting:** El componente está listo para montarse en el navegador DOM. Esta fase cubre la inicialización de los métodos de ciclo de vida `constructor()`, `getDerivedStateFromProps()`, `render()` y `componentDidMount()`.
 
-    1. **Render** The component will render without any side effects. This applies to Pure components and in this phase, React can pause, abort, or restart the render.
+    2. **Updating:** En esta fase, el componente se actualiza de dos maneras, enviando los nuevos accesorios y actualizando el estado desde `setstate ()` o `forceUpdate ()`.Esta fase cubre `getDerivedStateFromProps ()`, `debería componentupdate ()`, `render ()`, `getSnapShotBeForeUpdate ()` y `componentDidupDate ()` Lifecycle Methods.
 
-    2. **Pre-commit** Before the component actually applies the changes to the DOM, there is a moment that allows React to read from the DOM through the `getSnapshotBeforeUpdate()`.
+    3. **Unmounting:** En esta última fase, el componente no es necesario y se desmonta del navegador DOM. Esta fase incluye `ComponentWillunMount ()` Método de ciclo de vida.
 
-    3. **Commit** React works with the DOM and executes the final lifecycles respectively `componentDidMount()` for mounting, `componentDidUpdate()` for updating, and `componentWillUnmount()` for unmounting.
+    Vale la pena mencionar que React internamente tiene un concepto de fases al aplicar cambios al DOM. Están separados de la siguiente manera
 
-    React 16.3+ Phases (or an [interactive version](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
+    1. **Render** El componente se volverá sin ningún efecto secundario.Esto se aplica a los componentes puros y en esta fase, React puede detener, abortar o reiniciar el renderizado.
+
+    2. **Pre-commit** Antes de que el componente realmente aplique los cambios al DOM, hay un momento que permite que React lea desde el DOM a través del `getSnapshotbeforeUpdate ()`.
+
+    3. **Commit** React funciona con el DOM y ejecuta los ciclos de vida finales respectivamente `componentDidMount ()` para montaje, `componentDidupDate ()` para actualizar y `componentwillunmount ()` para desmontaje.
+
+    React 16.3+ fases (o una [versión interactiva](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/))
 
     ![phases 16.4+](images/phases16.4.png)
 
-    Before React 16.3
+    Antes de React 16.3
 
     ![phases 16.2](images/phases.png)
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-34. ### What are the lifecycle methods of React?
+34. ### ¿Cuáles son los métodos del ciclo de vida de reaccionar??
 
-    Before React 16.3
+    Antes React 16.3
 
-    - **componentWillMount:** Executed before rendering and is used for App level configuration in your root component.
-    - **componentDidMount:** Executed after first rendering and here all AJAX requests, DOM or state updates, and set up event listeners should occur.
-    - **componentWillReceiveProps:** Executed when particular prop updates to trigger state transitions.
-    - **shouldComponentUpdate:** Determines if the component will be updated or not. By default it returns `true`. If you are sure that the component doesn't need to render after state or props are updated, you can return false value. It is a great place to improve performance as it allows you to prevent a re-render if component receives new prop.
-    - **componentWillUpdate:** Executed before re-rendering the component when there are props & state changes confirmed by `shouldComponentUpdate()` which returns true.
-    - **componentDidUpdate:** Mostly it is used to update the DOM in response to prop or state changes.
-    - **componentWillUnmount:** It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component.
+    - **componentWillMount:** Ejecutado antes de renderizar y se usa para la configuración de nivel de aplicaciones en su componente raíz.
+    - **componentDidMount:** Ejecutado después de la primera representación y aquí todas las solicitudes de AJAX, las actualizaciones DOM o de Estado, y la configuración de los oyentes de eventos deberían ocurrir.
+    - **componentWillReceiveProps:** Ejecutado cuando se actualiza particular para activar las transiciones de estado.
+    - **shouldComponentUpdate:** Determina si el componente se actualizará o no.Por defecto, devuelve `verdadero '.Si está seguro de que el componente no necesita renderizar después de que se actualice el estado o los props, puede devolver un valor falso.Es un excelente lugar para mejorar el rendimiento, ya que le permite evitar un reingreso si el componente recibe un nuevo accesorio.
+    - **componentWillUpdate:** Ejecutado antes de volver a reproducir el componente cuando hay accesorios y cambios de estado confirmados por `debería componentupdate ()` que devuelve verdadero.
+    - **componentDidUpdate:** Principalmente se utiliza para actualizar el DOM en respuesta a los cambios de proporción o estado.
+    - **componentWillUnmount:** Se utilizará para cancelar cualquier solicitud de red saliente o eliminar a todos los oyentes de eventos asociados con el componente.
+      React 16.3+
 
-    React 16.3+
-
-    - **getDerivedStateFromProps:** Invoked right before calling `render()` and is invoked on _every_ render. This exists for rare use cases where you need a derived state. Worth reading [if you need derived state](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
-    - **componentDidMount:** Executed after first rendering and where all AJAX requests, DOM or state updates, and set up event listeners should occur.
-    - **shouldComponentUpdate:** Determines if the component will be updated or not. By default, it returns `true`. If you are sure that the component doesn't need to render after the state or props are updated, you can return a false value. It is a great place to improve performance as it allows you to prevent a re-render if component receives a new prop.
-    - **getSnapshotBeforeUpdate:** Executed right before rendered output is committed to the DOM. Any value returned by this will be passed into `componentDidUpdate()`. This is useful to capture information from the DOM i.e. scroll position.
-    - **componentDidUpdate:** Mostly it is used to update the DOM in response to prop or state changes. This will not fire if `shouldComponentUpdate()` returns `false`.
-    - **componentWillUnmount** It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component.
+    - **getDerivedStateFromProps:** Invocado justo antes de llamar a `render ()` y se invoca en _every_ render.Esto existe para casos de uso raros en los que necesita un estado derivado.Vale la pena leer [si necesita estado derivado](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
+    - **componentDidMount:** Ejecutado después de la primera representación y dónde deben ocurrir todas las solicitudes de AJAX, las actualizaciones DOM o de Estado, y configurar los oyentes de eventos.
+    - **shouldComponentUpdate:** Determina si el componente se actualizará o no.Por defecto, devuelve `True`.Si está seguro de que el componente no necesita renderizar después de actualizar el estado o los accesorios, puede devolver un valor falso.Es un excelente lugar para mejorar el rendimiento, ya que le permite evitar un reingreso si el componente recibe un nuevo prop.
+    - **getSnapshotBeforeUpdate:**Ejecutado justo antes de que la salida renderizada esté comprometida con el DOM.Cualquier valor devuelto por esto se pasará a `ComponentDidUpdate ()`.Esto es útil para capturar información del DOM, es decir, la posición de desplazamiento.
+    - **componentDidUpdate:** Principalmente se utiliza para actualizar el DOM en respuesta a los cambios de proporción o estado.Esto no se disparará si `debería componentupdate ()` devuelve `falso '.
+    - **componentWillUnmount** Se utilizará para cancelar cualquier solicitud de red saliente o eliminar a todos los oyentes de eventos asociados con el componente.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-35. ### What are Higher-Order Components?
+35. ### ¿Cuáles son los componentes de orden superior?
 
-    A _higher-order component_ (_HOC_) is a function that takes a component and returns a new component. Basically, it's a pattern that is derived from React's compositional nature.
+Un componente _ de orden más alto (\_HOC_) es una función que toma un componente y devuelve un nuevo componente.Básicamente, es un patrón que se deriva de la naturaleza compositiva de React.
 
-    We call them **pure components** because they can accept any dynamically provided child component but they won't modify or copy any behavior from their input components.
+    Los llamamos ** componentes puros ** porque pueden aceptar cualquier componente hijo proporcionado dinámicamente, pero no modificarán ni copiarán ningún comportamiento de sus componentes de entrada.
 
     ```javascript
     const EnhancedComponent = higherOrderComponent(WrappedComponent);
     ```
 
-    HOC can be used for many use cases:
+    HOC se puede usar para muchos casos de uso:
 
-    1. Code reuse, logic and bootstrap abstraction.
+    1. Reutilización de código, lógica y bootstrap abstracción.
     2. Render hijacking.
-    3. State abstraction and manipulation.
-    4. Props manipulation.
+    3. Abstracción y manipulación del state.
+    4. Manipulacion de las Props.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-36. ### How to create props proxy for HOC component?
+36. ### Cómo crear proxy de props para un componente hoc?
 
-    You can add/edit props passed to the component using _props proxy_ pattern like this:
+    Puede agregar/editar props pasados al componente usando el patrón _props proxy_ como este:
 
     ```jsx harmony
     function HOC(WrappedComponent) {
@@ -1096,11 +1095,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-37. ### What is context?
+37. ### Que es context?
 
-    _Context_ provides a way to pass data through the component tree without having to pass props down manually at every level.
+    _Context_ proporciona una forma de pasar datos a través del árbol de componentes sin tener que pasar los accesorios manualmente en todos los niveles.
 
-    For example, authenticated users, locale preferences, UI themes need to be accessed in the application by many components.
+    Por ejemplo, los usuarios autenticados, las preferencias locales, los temas de la interfaz de usuario deben ser accedidos en la aplicación por muchos componentes.
 
     ```javascript
     const { Provider, Consumer } = React.createContext(defaultValue);
@@ -1108,13 +1107,13 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-38. ### What is children prop?
+38. ### Que es un children prop?
 
-    _Children_ is a prop (`this.props.children`) that allows you to pass components as data to other components, just like any other prop you use. Component tree put between component's opening and closing tag will be passed to that component as `children` prop.
+    _Children_ es un prop (`this.props.children`) que le permite pasar componentes como datos a otros componentes, al igual que cualquier otro props que use. El árbol de componentes colocado entre la etiqueta de apertura y cierre del componente se pasará a ese componente como "Prop.children".
 
-    There are several methods available in the React API to work with this prop. These include `React.Children.map`, `React.Children.forEach`, `React.Children.count`, `React.Children.only`, `React.Children.toArray`.
+    Hay varios métodos disponibles en la API React para trabajar con este accesorio.Éstos incluyen `React.Children.map`, `React.Children.forEach`, `React.Children.count`, `React.Children.only`, `React.Children.toArray`.
 
-    A simple usage of children prop looks as below,
+    Un uso simple de los children prop se ve como en el codigo a continuacion,
 
     ```jsx harmony
     const MyDiv = React.createClass({
@@ -1134,11 +1133,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-39. ### How to write comments in React?
+39. ### Cómo escribir comentarios en React?
 
-    The comments in React/JSX are similar to JavaScript Multiline comments but are wrapped in curly braces.
+    Los comentarios en React/JSX son similares a los comentarios de JavaScript Multiline, pero están envueltos en {}.
 
-    **Single-line comments:**
+    **Comentarios de una sola línea:**
 
     ```jsx harmony
     <div>
@@ -1147,7 +1146,7 @@ You can download the PDF and Epub version of this repository from the latest run
     </div>
     ```
 
-    **Multi-line comments:**
+    **Comentarios de múltiples líneas:**
 
     ```jsx harmony
     <div>
@@ -1159,11 +1158,11 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-40. ### What is the purpose of using super constructor with props argument?
+40. ### Cuál es el propósito de usar super constructor con props argument?
 
-    A child class constructor cannot make use of `this` reference until the `super()` method has been called. The same applies to ES6 sub-classes as well. The main reason for passing props parameter to `super()` call is to access `this.props` in your child constructors.
+    Un child class constructor no puede hacer uso de la referencia `this` hasta que el `super()` se ha llamado a método. Lo mismo se aplica a las subclases ES6 también. La razón principal para pasar los props como parametro `super()` call es para acceder a `this.props` en tus child constructors.
 
-    **Passing props:**
+    **Pasando props:**
 
     ```javascript
     class MyComponent extends React.Component {
@@ -1175,7 +1174,7 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    **Not passing props:**
+    **No pasando props:**
 
     ```javascript
     class MyComponent extends React.Component {
@@ -1195,19 +1194,19 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    The above code snippets reveals that `this.props` is different only within the constructor. It would be the same outside the constructor.
+    Los fragmentos de código anteriores revelan que `this.props` es diferente solo dentro del constructor.Sería lo mismo fuera del constructor.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-41. ### What is reconciliation?
+41. ### Que es la reconciliación?
 
-    When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called _reconciliation_.
+    Cuando los props o el estado de un componente cambian, React decide si es necesaria una actualización de DOM real comparando el elemento recién devuelto con el previamente renderizado.Cuando no son iguales, React actualizará el DOM.Este proceso se llama _reconciliación_.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-42. ### How to set state with a dynamic key name?
+42. ### Cómo establecer el estado con un nombre de clave dinámica?
 
-    If you are using ES6 or the Babel transpiler to transform your JSX code then you can accomplish this with _computed property names_.
+    Si está utilizando ES6 o el transpilador Babel para transformar su código JSX, puede lograrlo con _Computed Propiedades Names_.
 
     ```javascript
     handleInputChange(event) {
@@ -1217,9 +1216,9 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-43. ### What would be the common mistake of function being called every time the component renders?
+43. ### ¿Cuál sería el error común de la función que se llama cada vez que el componente presenta??
 
-    You need to make sure that function is not being called while passing the function as a parameter.
+    Debe asegurarse de que la función no se llame al pasar la función como un parámetro.
 
     ```jsx harmony
     render() {
@@ -1228,7 +1227,7 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    Instead, pass the function itself without parenthesis:
+    En cambio, pase la función en sí sin paréntesis:
 
     ```jsx harmony
     render() {
@@ -1239,10 +1238,10 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-44. ### Is lazy function supports named exports?
+44. ### ¿La función lazy admite las exportaciones nombradas??
 
-    No, currently `React.lazy` function supports default exports only. If you would like to import modules which are named exports, you can create an intermediate module that reexports it as the default. It also ensures that tree shaking keeps working and don’t pull unused components.
-    Let's take a component file which exports multiple named components,
+    No, actualmente la función `react.lazy` admite solo exportaciones predeterminadas.Si desea importar módulos que se denominan exportaciones, puede crear un módulo intermedio que lo reexporte como el valor predeterminado.También garantiza que el sacudido de los árboles siga funcionando y no tire de los componentes no utilizados.
+    Tomemos un archivo de componentes que exporta múltiples componentes con nombre,
 
     ```javascript
     // MoreComponents.js
@@ -1250,14 +1249,14 @@ You can download the PDF and Epub version of this repository from the latest run
     export const UnusedComponent = /* ... */;
     ```
 
-    and reexport `MoreComponents.js` components in an intermediate file `IntermediateComponent.js`
+    y volver a exportar `más componentes.js` componentes en un archivo intermedio 'Componente intermedio.js`
 
     ```javascript
     // IntermediateComponent.js
     export { SomeComponent as default } from "./MoreComponents.js";
     ```
 
-    Now you can import the module using lazy function as below,
+    Ahora puede importar el módulo usando la función Lazy como se muestra a continuación,
 
     ```javascript
     import React, { lazy } from "react";
@@ -1266,9 +1265,9 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-45. ### Why React uses `className` over `class` attribute?
+45. ### Por qué React usa el atributo `classname` sobre` class`?
 
-    `class` is a keyword in JavaScript, and JSX is an extension of JavaScript. That's the principal reason why React uses `className` instead of `class`. Pass a string as the `className` prop.
+    `Class` es una palabra clave en JavaScript, y JSX es una extensión de JavaScript.Esa es la razón principal por la que React usa `classname` en lugar de 'clase'.Pase una cadena como el appet `classname`.
 
     ```jsx harmony
     render() {
@@ -1278,9 +1277,9 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-46. ### What are fragments?
+46. ### Que son los fragments?
 
-    It's a common pattern in React which is used for a component to return multiple elements. _Fragments_ let you group a list of children without adding extra nodes to the DOM.
+    Es un patrón común en React que se utiliza para que un componente devuelva múltiples elementos. _Fragments_ le permita agrupar una lista de childs sin agregar nodos adicionales al DOM.
 
     ```jsx harmony
     render() {
@@ -1294,7 +1293,7 @@ You can download the PDF and Epub version of this repository from the latest run
     }
     ```
 
-    There is also a _shorter syntax_, but it's not supported in many tools:
+    También hay una sintaxis \_shorter, pero no es compatible en muchas herramientas:
 
     ```jsx harmony
     render() {
@@ -1310,37 +1309,36 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-47. ### Why fragments are better than container divs?
+47. ### Por qué los fragments son mejores que los divs de contenedores?
 
-    Below are the list of reasons,
+A continuación se muestran la lista de razones,
 
-    1. Fragments are a bit faster and use less memory by not creating an extra DOM node. This only has a real benefit on very large and deep trees.
-    2. Some CSS mechanisms like _Flexbox_ and _CSS Grid_ have a special parent-child relationships, and adding divs in the middle makes it hard to keep the desired layout.
-    3. The DOM Inspector is less cluttered.
-
+    1. Los fragmentos son un poco más rápidos y usan menos memoria al no crear un nodo DOM adicional. Esto solo tiene un beneficio real en árboles muy grandes y profundos.
+    2. Algunos mecanismos CSS como _FlexBox_ y _CSS Grid_ tienen relaciones especiales para padres e hijos, y agregar DIV en el medio hace que sea difícil mantener el diseño deseado.
+    3. El inspector DOM está menos desordenado.
     **[⬆ Regresar arriba](#table-of-contents)**
 
-48. ### What are portals in React?
+48. ### Qué son los portales en React??
 
-    _Portal_ is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+    _Portal_ es una forma recomendada de convertir a los hijos en un nodo DOM que existe fuera de la jerarquía DOM del componente principal.
 
     ```javascript
     ReactDOM.createPortal(child, container);
     ```
 
-    The first argument is any render-able React child, such as an element, string, or fragment. The second argument is a DOM element.
+    El primer argumento es cualquier niño reactable que se pueda hacer, como un elemento, una cadena o fragmento.El segundo argumento es un elemento DOM.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-49. ### What are stateless components?
+49. ### Qué son los componentes sin estado??
 
-    If the behaviour is independent of its state then it can be a stateless component. You can use either a function or a class for creating stateless components. But unless you need to use a lifecycle hook in your components, you should go for function components. There are a lot of benefits if you decide to use function components here; they are easy to write, understand, and test, a little faster, and you can avoid the `this` keyword altogether.
+    Si el comportamiento es independiente de su estado, entonces puede ser un componente sin estado.Puede usar una función o una clase para crear componentes sin estado.Pero a menos que necesite usar un gancho de ciclo de vida en sus componentes, debe optar por los componentes de la función.Hay muchos beneficios si decide usar los componentes de la función aquí;son fáciles de escribir, comprender y probar, un poco más rápido, y puede evitar el `this`.
 
     **[⬆ Regresar arriba](#table-of-contents)**
 
-50. ### What are stateful components?
+50. ### Qué son los componentes con estado??
 
-    If the behaviour of a component is dependent on the _state_ of the component then it can be termed as stateful component. These _stateful components_ are always _class components_ and have a state that gets initialized in the `constructor`.
+    Si el comportamiento de un componente depende del _state_ del componente, entonces se puede denominar como componente con estado. Estos componentes _statefull_ son siempre _class componentes_ y tienen un estado que se inicializa en el `constructor`.
 
     ```javascript
     class App extends Component {
@@ -1357,9 +1355,9 @@ You can download the PDF and Epub version of this repository from the latest run
 
     **React 16.8 Update:**
 
-    Hooks let you use state and other React features without writing classes.
+    Los hooks le permiten usar características de reacción de estado y otras sin escribir clases.
 
-    _The Equivalent Functional Component_
+    _El componente funcional equivalente_
 
         ```javascript
          import React, {useState} from 'react';
@@ -6706,14 +6704,13 @@ const loadUser = async () => {
      3. React-Redux `<Provider>` passing the store to React components
      4. Small "counter" example to demo how to add redux logic and React-Redux hooks API to interact with the store from components
         The below commands need to be executed along with template option as below,
-     5. **Javascript template:**
-     ```js
-     npx create-react-app my-app --template redux
-     ```
+     5. **Javascript template:** ```js
+        npx create-react-app my-app --template redux
+     ````
      2. **Typescript template:**
      ```js
      npx create-react-app my-app --template redux-typescript
-     ```
+     ````
      **[⬆ Regresar arriba](#table-of-contents)**
 329. ### What are React Server components?
 
